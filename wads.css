@@ -1,0 +1,378 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font: 100%/1.4 Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	background-color: #fff;
+	
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #000;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #000;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+}
+
+/* ~~ this fixed width container surrounds the other divs ~~ */
+.container {
+	width: 1000px;
+	height:100%;
+	background: #FFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background:#FFF;
+	height: 150px;
+	padding-top:10px;
+}
+
+.header_col_1 {
+	float:left;
+	width:170px;
+}
+
+.header_col_2 {
+	float:left;
+	width:680px;
+	text-align:right;
+	height:150px;
+}
+
+.header_col_3 {
+	float:left;
+	width:150px;
+}
+
+#top-nav{
+	float:left;
+	margin: 0 auto;
+	text-align:right;
+	width:100%;
+	height:30px;
+	font-weight:bold;
+}
+
+#top-nav a:link {
+	color: #000;
+	text-decoration: underline; 
+}
+
+#top-nav a:visited {
+	color: #000;
+	text-decoration: underline;
+}
+
+#top-nav a:hover, a:active, a:focus { 
+	color:#000;
+	text-decoration:underline;
+}
+
+#top-nav ul {
+	margin: 00px 0 0 0px;
+}
+#top-nav ul li {
+	display:inline;
+	margin: 0 5px;
+	font-size:130%;
+}
+
+.telephone {
+	height:10px;
+	text-align:right;
+}
+
+.headline {
+	height:70px;
+	text-align:right;
+}
+
+
+.nav-bar {
+	background:#6699CC;
+	margin-top:15px;
+	height:36px;
+}
+
+#navigation{
+	width:100%;
+	height:36px;
+	background-color:#6699CC;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+
+#navigation ul {
+	margin:0px; 
+	padding:0px;
+}
+
+#navigation ul li {
+	display:inline;
+	padding-top:5px;
+	height:31px;
+	float:left;
+	list-style:none;
+	margin-left:15px;
+	position:relative;
+}
+
+#navigation li a {
+	color:#000;
+	text-decoration:underline;
+}
+
+#navigation li a:hover {
+	text-decoration:underline;
+}
+
+#navigation li ul
+{
+	margin:0px;
+	padding:0px;
+	display:none;
+	position:absolute;
+	left:0px;
+	top:36px;
+	background-color:#fff;
+	border: 2px solid #99CCCC;
+	z-index:1000;
+	opacity:0.95;
+	filter:alpha(opacity=95); /* For IE8 and earlier */
+}
+
+#navigation li:hover ul {
+	display:block;
+	width:200px;
+}
+
+#navigation li li {
+	list-style:none;
+	display:list-item;
+	width:100%;
+}
+
+#navigation li li a {
+	color:#000;
+	text-decoration:none;
+}
+
+#navigation li li a:hover {
+	text-decoration:underline;
+}
+
+.content {
+
+	padding: 10px;
+}
+
+.sidebar1 {
+	float: left;
+	width: 236px;
+	padding-bottom: 10px;
+	
+}
+
+.sidebar2 {
+	float: right;
+	width: 15px;
+	height: 500px;
+	background-color:#66CC99;
+}
+
+.coverimage {
+	width: 100%;
+	height: 130px;
+	margin-bottom: 10px;
+	text-align:center;
+}
+
+ul.nav {
+	background: #FFF;
+	list-style: none; /* this removes the list marker */
+	
+}
+ul.nav li {
+	margin-bottom: 5px; /* this creates the button separation */
+	background:#66CC99;
+}
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	padding: 5px 5px 5px 15px;
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 216px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: underline;
+	
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	background: #99CCCC;
+	color: #FFF;
+}
+
+.text {
+	width:740px;
+	position: relative; /* important */
+	text-align:left;
+}
+
+#slider {
+	height:380px;
+	width:645px;
+	position: relative; /* important */
+	overflow: hidden; /* important */
+	text-align:left;
+}
+
+#sliderContent {
+    width: 645px; /* important to be same as image width or wider */
+    position: absolute;
+	top: 0;
+	margin-left: 0;
+}
+
+.sliderImage {
+    float: left;
+    position: relative;
+	display: none;
+}
+
+#navigation li:hover ul {
+	display:block;
+	width:200px;
+}
+
+
+.sliderImage a {
+	color:#FFF;
+	text-decoration:underline;
+}
+
+.sliderImage a:hover {
+	text-decoration:underline;
+}
+
+.sliderImage span {
+    position: absolute;
+    padding: 10px;
+    width: 200px;  /* This is the width of the caption box  */
+	height:380px; /* This is the height of the caption box  */
+    background-color: #000;  /* This sets the background color of the semi transparent box */
+    /* If you do not want the transparent content field to appear, change all opacity values to 0 */
+	filter: alpha(opacity=70); -moz-opacity: 0.7; -khtml-opacity: 0.7; opacity: 0.7;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	line-height:150%;
+    color: #fff; /* This is the color of the text in the caption box */
+    display: none;
+}
+
+.sliderImage span strong { 
+	color:#FF9428;  /* This is the color of the title text in the caption box */
+	font-size: 22px; /* This is the font size of the title text in the caption box */
+	line-height:300%;
+	}
+
+.clear { clear: both; }
+
+
+.top { top: 0; left: 0px; }  /* This sets the upper left corner of the caption box */
+
+.bottom { bottom: 0; left: 0; } /* This sets the lower left corner of the caption box */
+
+#slider ul { 
+	list-style-type: none;
+	}
+	
+#slider ul li {
+	margin-left:0px; 
+	}
+
+.side-image {
+	height:180;
+	width:326;
+	float:right;
+	/*opacity:0.4;
+	filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+/*.side-image:hover
+{
+opacity:1.0;
+filter:alpha(opacity=100); /* For IE8 and earlier */
+
+.band {
+	height:30px;
+	background:#6699CC;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+
+.block {
+	height:399;
+	width:240;
+	float:left;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	padding: 10px 0;
+	background: #99CCCC;
+	border: 2px solid #99CCCC;
+	
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
+.more {
+	color:#069;
+	display: none;
+	border-top: 1px solid #666;
+	padding-top:10px;
+	border-bottom: 1px solid #666; }
+a.showLink, a.hideLink {
+	text-decoration: none;
+	color: #66CC99;
+	padding-left: 8px;
+	background: transparent url('down.gif') no-repeat left; 
+	font-size: small;}
+a.hideLink {
+	background: transparent url('up.gif') no-repeat left; }
